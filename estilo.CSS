@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #88759a;
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    grid-template-rows: 1fr 1fr 4fr 4fr 4fr 1fr;
+    grid-template-areas: 
+    "encabezado encabezado encabezado"
+    "nav nav nav"
+    ". eslogan publicaciones"
+    ". main publicaciones"
+    ". contacto ."
+    "pie pie pie";
+height: 100vh;
+}
+#header{
+    background-color: #08c1ff;
+    text-align: center;
+    grid-area: encabezado;
+}
+nav{
+    background-color:#08f1ff;
+    display: flex;
+    flex-direction: row;
+    width:100%;
+    grid-area: nav;
+}
+nav a{
+    width:calc(100%/4);
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+    padding-bottom: 10px;
+    border: 4px solid black;
+}
+h2{
+    text-align: center;
+    grid-area: texto;
+    margin-top: 5%;
+    font-size: 40px;
+}
+#eslogan{
+    background-color: #47ffc4;
+    grid-area: eslogan;
+    background-image: url("piso.jpg");
+    position: relative;
+    font-size:30px;
+    height: 400px;
+}
+#link {
+    position: absolute;
+    left: 45%;
+    bottom: 100px;
+    color: rgb(18, 219, 18);
+}
+.main {
+    background-color:#fffbb2;
+    grid-area: main;
+    text-align: center;
+}
+.imagen{
+display: flex;
+justify-content: space-between;
+margin: 50px;
+}
+#publicaciones{
+    background-color:#12707a;
+    grid-area:publicaciones;
+    text-align: center;
+}
+#publicaciones img{
+    margin-top: 20px;
+}
+.contacto{
+    background-color: #908378;
+    grid-area: contacto;
+}
+#contactos label, #contactos input, #contactos textarea{
+    display: block; 
+    margin-left: 40px;
+    width: 70%;
+    font-size:30px;
+    margin-bottom:20px;
+}
+#contactos a{
+    display: block;
+    margin-left: 25%;
+    border: 5px solid black ;
+    margin-bottom: 20px;
+    font-size:30px;
+    width: 85px;
+}
+footer{
+    background-color:#fffbdf;
+    grid-area: pie;
+    text-align: center;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+@media (max-width:500px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas: "encabezado"
+        "nav"
+        "eslogan"
+        "main"
+        "publicaciones"
+        "contacto"
+        "pie";
+    }
+    
+}
